@@ -8,7 +8,7 @@ import Logo from "./Logo";
 
 const Landing = () => {
   return (
-    <>
+    <div>
       <nav>
         <Logo />
       </nav>
@@ -41,7 +41,7 @@ const Landing = () => {
           <img src={main} alt="job hunt" className="img main-img" />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
