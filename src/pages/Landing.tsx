@@ -1,16 +1,16 @@
 import React from "react";
-import logo from "../assets/logo.svg";
 import main from "../assets/main-alternative.svg";
 
 import { Link } from "react-router-dom";
 
-import '../pages/style/landing.css'
+import "../pages/style/landing.css";
+import Logo from "./Logo";
 
 const Landing = () => {
   return (
     <>
       <nav>
-        <img src={logo} alt="jobify" className="logo" />
+        <Logo />
       </nav>
       <div className="container page">
         <div className="info">
@@ -31,15 +31,14 @@ const Landing = () => {
             comme Aldus PageMaker.
           </p>
           <div className="link-button">
-
-          <Link to="/register" className="btn register-link">
-            Register
-          </Link>
-          <Link to="/login" className="btn">
-            Login / Demo User
-          </Link>
+            <Link to="/register" className="btn register-link">
+              Register
+            </Link>
+            <Link to="/login" className="btn">
+              Login / Demo User
+            </Link>
           </div>
-          <img src={main} alt='job hunt' className="img main-img" />
+          <img src={main} alt="job hunt" className="img main-img" />
         </div>
       </div>
     </>
