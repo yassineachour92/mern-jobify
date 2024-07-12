@@ -1,31 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
+import FormRow from "./Form";
 
 import "../pages/style/register.css";
+
 const Register = () => {
   return (
     <form className="form">
       <Logo />
       <h4>Register</h4>
-      <div className="form-row">
-        <label htmlFor="name" className="form-label">
-          name
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          className="form-input"
-          placeholder="Your Name"
-          required
-        />
-      </div>
+      <FormRow type="text" name="name" defaultValue="Your Name" />
+      <FormRow type="text" name="LastName" labelText="LastName" defaultValue="Your Last Name" />
+      <FormRow type="text" name="Location" defaultValue="Your Location" />
+      <FormRow type="email" name="Email" defaultValue="Your Email adresse" />
+      <FormRow type="Password" name="Password" defaultValue="Your Password" />
+   
       <button type="submit" className="btn btn-block">
-        submit
+        Register
       </button>
       <p>
-        Already a member?
+        Already a member? 
         <Link to="/login" className="member-btn">
           Login Page
         </Link>

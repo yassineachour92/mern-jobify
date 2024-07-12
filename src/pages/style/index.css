@@ -240,6 +240,7 @@ button:disabled {
   text-transform: capitalize;
   letter-spacing: var(--letter-spacing);
   line-height: 1.5;
+  color:black
 }
 .form-input,
 .form-textarea,
