@@ -17,6 +17,7 @@ const Error = () => {
       </div>
     );
   }
+  
   return (
     <div>
       <h3>something went wrong</h3>

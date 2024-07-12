@@ -4,7 +4,7 @@ import main from "../assets/main-alternative.svg";
 import { Link } from "react-router-dom";
 
 import "../pages/style/landing.css";
-import Logo from "./Logo";
+import Logo from "../components/Logo";
 
 const Landing = () => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Logo from './Logo'
-import FormRow from './Form'
+import Logo from '../components/Logo'
+import FormRow from '../components/Form'
 import "../pages/style/login.css";
 const Login = () => {
   return (
