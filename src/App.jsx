@@ -39,6 +39,24 @@ const router = createBrowserRouter([
       {
         path: "dashboard",
         element: <DashBoard />,
+        children:[
+          {
+            index:true,
+            element:<AddJob />
+          },
+          {
+            path: "admin",
+            element: <Admin />,
+          },
+          {
+            path:'profile',
+            element:<Profile />
+          },
+          {
+            path:'stats',
+            element:<Stats />
+          }
+        ]
       },
       {
         path: "delete-job",
