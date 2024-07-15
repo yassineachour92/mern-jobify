@@ -1,16 +1,38 @@
-import React, { useContext } from 'react'
-import '../pages/style/smallSiderBar.css'
-import { useDashBoardContext } from '../pages/DashBoard'
+import React, { useContext } from "react";
+import { useDashBoardContext } from "../pages/DashBoard";
 
+import "../pages/style/smallSiderBar.css";
+import { FaTimes } from "react-icons/fa";
+import Logo from "./Logo";
+import links from "../utils/links";
+import { NavLink } from "react-router-dom";
 
 const SmallSidebar = () => {
-  const data=useDashBoardContext()
+  const data = useDashBoardContext();
   return (
-    <div className='main'>
-      smallSiderbar
+    <div className="main">
+      <div className="sidebar-container show-sidebar">
+        <div className="content">
+          <button type="button" className="close-btn">
+            <FaTimes />
+          </button>
+          <header>
+            <Logo />
+          </header>
+          <div className="nav-links">
+            {links.map((link)=>{
+              const {text,path,icon}=link
+              return <NavLink to={path} key={text} className="nav-link">
+                <span className="icon">
+                  {icon}
+                </span>{text}
+              </NavLink>
+            })}
+          </div>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-
-export default SmallSidebar
+export default SmallSidebar;
