@@ -15,12 +15,14 @@ const DashBoard = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   const toggleDarkTheme = () => {
-    console.log("toggle dark theme");
+    const newDarkTheme=!isDarkTheme;
+    setIsDarkTheme(newDarkTheme)
+    document.body.classList.toggle('dar-theme',newDarkTheme);
+    localStorage.setItem('darkTheme',newDarkTheme)
   };
 
   const toggleSiderbar = () => {
     setShowSiderBar(!showSiderBar);
-    console.log('tt');
   };
 
   const logoutUser = async () => {
@@ -40,12 +42,12 @@ const DashBoard = () => {
         logoutUser
       }}
     >
-      <main className="dashboard">
+      <main className="dashboard-main">
         <SmallSidebar />
         <BigSidebar />
         <div>
           <Navbar />
-          <div className="dashboard-page">
+          <div className={showSiderBar ? "dashboard-page showSideBarDashBoard":"dashboard-page"}>
             <Outlet />
           </div>
         </div>
