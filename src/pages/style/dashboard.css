@@ -1,4 +1,4 @@
-.dashboard {
+.dashboard-main {
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -7,11 +7,20 @@
     margin: 0 auto;
     padding: 2rem 0;
   }
+  .showSideBarDashBoard{
+    margin-left: 19rem;
+    width: 70vw;
+
+  }
   @media (min-width: 992px) {
     .dashboard {
       grid-template-columns: auto 1fr;
     }
     .dashboard-page {
       width: 90%;
+    }
+    .showSideBarDashBoard{
+      width: 70vw;
+  
     }
   }
