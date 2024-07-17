@@ -4,34 +4,29 @@ import { useDashBoardContext } from "../pages/DashBoard";
 import "../pages/style/smallSiderBar.css";
 import { FaTimes } from "react-icons/fa";
 import Logo from "./Logo";
-import links from "../utils/links";
-import { NavLink } from "react-router-dom";
+import NavLinks from "./NavLinks.tsx";
 
 const SmallSidebar = () => {
-  const data = useDashBoardContext();
+  const { showSiderBar, toggleSiderbar } = useDashBoardContext();
+
   return (
-    <div className="main">
-      <div className="sidebar-container show-sidebar">
+    <main className="small-sidebar-main">
+      <div
+        className={
+          showSiderBar ? "sidebar-container show-sidebar" : "sidebar-container"
+        }
+      >
         <div className="content">
-          <button type="button" className="close-btn">
+          <button type="button" className="close-btn" onClick={toggleSiderbar}>
             <FaTimes />
           </button>
           <header>
             <Logo />
           </header>
-          <div className="nav-links">
-            {links.map((link)=>{
-              const {text,path,icon}=link
-              return <NavLink to={path} key={text} className="nav-link">
-                <span className="icon">
-                  {icon}
-                </span>{text}
-              </NavLink>
-            })}
-          </div>
+          <NavLinks />
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 
