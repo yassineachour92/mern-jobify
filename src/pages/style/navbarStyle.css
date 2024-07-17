@@ -1,4 +1,4 @@
-.main{
+.navBar-main{
 
   height: var(--nav-height);
   display: flex;
@@ -20,6 +20,11 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    right: 50px;
+    left: 50px;
+  }
+  .showSideBar{
+    margin-left: 13rem;
   }
   .logo-text {
     display: none;
