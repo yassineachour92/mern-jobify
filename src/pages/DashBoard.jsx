@@ -8,16 +8,19 @@ import "../pages/style/dashboard.css";
 
 const DashBoardContext = createContext();
 
-const DashBoard = () => {
+
+
+// eslint-disable-next-line react/prop-types
+const DashBoard = ({isDarkThemeEnabled}) => {
   const user = { name: "john" };
 
   const [showSiderBar, setShowSiderBar] = useState(false);
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(isDarkThemeEnabled);
 
   const toggleDarkTheme = () => {
     const newDarkTheme=!isDarkTheme;
     setIsDarkTheme(newDarkTheme)
-    document.body.classList.toggle('dar-theme',newDarkTheme);
+    document.body.classList.toggle('dark-theme',newDarkTheme);
     localStorage.setItem('darkTheme',newDarkTheme)
   };
 
